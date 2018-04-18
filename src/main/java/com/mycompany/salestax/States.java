@@ -14,19 +14,20 @@ public class States {
 
     static {
         State state = new State();
-         
         stateName = "Arkansas";
         state.setBaseSalesTax(0.065);
         state.setGroceryTax(0.08);
         statesMap.put(stateName, state);
         
+        state = new State();
         stateName = "Georgia";
         state.setBaseSalesTax(0.04);
         state.setGroceryTax(0.04);
         statesMap.put(stateName, state);
         
+        state = new State();
         stateName = "Iowa";
-        state.setBaseSalesTax(0.06);
+        state.setBaseSalesTax(0.6);
         state.setGroceryTax(0.0);
         statesMap.put(stateName, state);
     }
@@ -53,19 +54,18 @@ public class States {
         State otherState;
 
         Double maxGroceryTax = firstState.getGroceryTax();
-        
-        for(Map.Entry state:statesMap.entrySet()){
+        for(Map.Entry state:States.getStatesMap().entrySet()){
             otherState = (State)state.getValue();
             if (maxGroceryTax < otherState.getGroceryTax()){
                 maxGroceryTax = otherState.getGroceryTax();
-                break;
+                //break;
             }       
         }
         return maxGroceryTax;
     }
     
-    public static Double calculateProductPrice(Double productionPrice, String stateName){
-        State state = statesMap.get(stateName);
+    public static Double calculateProductPrice(Double productionPrice, State state){
+        
         Double stateGroceryTax = state.getGroceryTax();
         Double minPrice = productionPrice + productionPrice*profit;
         Double maxGroceryTax = getMaxGroceryTax();
