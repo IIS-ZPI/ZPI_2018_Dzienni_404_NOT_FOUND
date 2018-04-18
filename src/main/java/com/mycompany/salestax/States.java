@@ -1,3 +1,5 @@
+package com.mycompany.salestax;
+
 import java.util.*;
 
 /**
