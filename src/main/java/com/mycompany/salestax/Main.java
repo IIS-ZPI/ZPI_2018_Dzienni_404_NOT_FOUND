@@ -23,13 +23,13 @@ public class Main {
             System.out.println("Input product price:" );
             productionPrice = input.nextDouble();
             Double overallPrice = States.calculateGroceryPriceForStateWithMaxTax(productionPrice);
-            System.out.println("Product price with tax and profit is: " + overallPrice);
+            System.out.printf("Product price with tax and profit is: %.2f", overallPrice);
             for(Map.Entry entry:States.getStatesMap().entrySet()){
                 State state = (State) entry.getValue();
                 Double netProfit = States.calculateProductPrice(productionPrice, state);
-                System.out.println("Net profit in " + entry.getKey() + " is : " + netProfit);
+                System.out.print("\nNet profit in " + entry.getKey());
+                System.out.printf(" is: %.2f", netProfit);
             }
         }
     }
-    
 }

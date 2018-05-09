@@ -124,14 +124,6 @@ public class States {
         Double netProfit = priceProfitInState - productionPrice;
         
         return netProfit;
-//        Double profitSum = productionPrice - minPrice;
-//        Double productPrice = productionPrice + productionPrice*profit + productionPrice*stateGroceryTax;
-//        Double maxProductPrice = productionPrice + productionPrice*profit + productionPrice*maxGroceryTax;
-//        if (productPrice < maxProductPrice){
-//            profitSum = maxProductPrice - productPrice;
-//            return profitSum;
-//        }
-//        else return profitSum;
     }
     
     public static String getStateName() {
