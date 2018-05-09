@@ -13,8 +13,6 @@ package com.mycompany.salestax;
 public class State {
     
     private String stateName;
-    private Double baseSalesTax;
-    private Double surtax;
     private Double groceryTax;
     private Double preparedFoodTax;
     private Double prescriptionDrugTax;
@@ -28,22 +26,6 @@ public class State {
 
     public void setStateName(String stateName) {
         this.stateName = stateName;
-    }
-
-    public Double getBaseSalesTax() {
-        return baseSalesTax;
-    }
-
-    public void setBaseSalesTax(Double baseSalesTax) {
-        this.baseSalesTax = baseSalesTax;
-    }
-
-    public Double getSurtax() {
-        return surtax;
-    }
-
-    public void setSurtax(Double surtax) {
-        this.surtax = surtax;
     }
 
     public Double getGroceryTax() {
@@ -96,7 +78,7 @@ public class State {
 
     @Override
     public String toString() {
-        return "State{" + "baseSalesTax=" + baseSalesTax + ", surtax=" + surtax +
+        return "State{"+
                 ", groceryTax=" + groceryTax + ", preparedFoodTax=" + preparedFoodTax +
                 ", prescriptionDrugTax=" + prescriptionDrugTax + ", nonprescriptionDrugTax=" + 
                 nonprescriptionDrugTax + ", clothingTax=" + clothingTax + ", intangiblesTax=" + intangiblesTax + '}';

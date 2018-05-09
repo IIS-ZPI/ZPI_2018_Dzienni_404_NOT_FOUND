@@ -15,20 +15,67 @@ public class States {
     static {
         State state = new State();
         stateName = "Arkansas";
-        state.setBaseSalesTax(0.065);
         state.setGroceryTax(0.08);
         statesMap.put(stateName, state);
         
         state = new State();
         stateName = "Georgia";
-        state.setBaseSalesTax(0.04);
-        state.setGroceryTax(0.04);
+        state.setGroceryTax(0.08);
         statesMap.put(stateName, state);
         
         state = new State();
         stateName = "Iowa";
-        state.setBaseSalesTax(0.6);
         state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Kansas";
+        state.setGroceryTax(0.065);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Kentucky";
+        state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Louisiana";
+        state.setGroceryTax(0.12);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Maine";
+        state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Maryland";
+        state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Massachusetts";
+        state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+
+        state = new State();
+        stateName = "Michigan";
+        state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+        
+        state = new State();
+        stateName = "Minnesota";
+        state.setGroceryTax(0.0);
+        statesMap.put(stateName, state);
+        
+        state = new State();
+        stateName = "Mississippi";
+        state.setGroceryTax(0.07);
+        
+        statesMap.put(stateName, state);
+        state = new State();
+        stateName = "Missouri";
+        state.setGroceryTax(0.0545);
         statesMap.put(stateName, state);
     }
 
@@ -58,7 +105,6 @@ public class States {
             otherState = (State)state.getValue();
             if (maxGroceryTax < otherState.getGroceryTax()){
                 maxGroceryTax = otherState.getGroceryTax();
-                //break;
             }       
         }
         return maxGroceryTax;
