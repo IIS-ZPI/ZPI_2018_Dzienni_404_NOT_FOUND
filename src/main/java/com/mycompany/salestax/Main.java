@@ -13,8 +13,6 @@ public class Main {
     static String stateName;
     static String taxName;
     static Double productionPrice;
-    static Double productPrice;
-    static Double netProfit;
     public static void main(String args[]){
         
         System.out.println("(Arkansas, Georgia and Iowa available)");
@@ -24,14 +22,14 @@ public class Main {
             taxName = "groceryTax";
             System.out.println("Input product price:" );
             productionPrice = input.nextDouble();
-            System.out.println("MaxPrice" + calculateGroceryPriceForStateWithMaxTax(productionPrice));
+            Double overallPrice = States.calculateGroceryPriceForStateWithMaxTax(productionPrice);
+            System.out.printf("Product price with tax and profit is: %.2f", overallPrice);
             for(Map.Entry entry:States.getStatesMap().entrySet()){
                 State state = (State) entry.getValue();
-                productPrice = States.calculateProductPrice(productionPrice, state);
-                System.out.println("Product price with tax and profit is: " + productPrice);
-                System.out.println("Net profit in " + entry.getKey() + " is : " + netProfit);
+                Double netProfit = States.calculateProductPrice(productionPrice, state);
+                System.out.print("\nNet profit in " + entry.getKey());
+                System.out.printf(" is: %.2f", netProfit);
             }
         }
     }
-    
 }
