@@ -1,5 +1,6 @@
 package com.mycompany.salestax;
 
+import static com.mycompany.salestax.States.*;
 import java.util.Scanner; 
 import java.util.*;
 /**
@@ -23,7 +24,7 @@ public class Main {
             taxName = "groceryTax";
             System.out.println("Input product price:" );
             productionPrice = input.nextDouble();
-            
+            System.out.println("MaxPrice" + calculateGroceryPriceForStateWithMaxTax(productionPrice));
             for(Map.Entry entry:States.getStatesMap().entrySet()){
                 State state = (State) entry.getValue();
                 productPrice = States.calculateProductPrice(productionPrice, state);
