@@ -9,3 +9,12 @@ cache:
   
 install:
   - mvn install -DfinalName=release -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  
+deploy:
+  provider: releases
+  api_key:
+    secure: Uaeb3SEgbhYlumdbdz5Yeg
+  file: target/release.jar
+  skip_cleanup: true
+  on:
+    tags: true
