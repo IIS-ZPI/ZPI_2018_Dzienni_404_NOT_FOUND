@@ -13,7 +13,8 @@ install:
 deploy:
   provider: releases
   api_key:
-    secure: Uaeb3SEgbhYlumdbdz5Yeg
+    secure: 
+    77aecf3dd537e817818834364bcaf64f42360149
   file: target/release.jar
   skip_cleanup: true
   on:
