@@ -111,18 +111,18 @@ public class States {
     }
     
     public static Double calculateGroceryPriceForStateWithMaxTax(Double productionPrice){
-        Double minPrice = productionPrice + productionPrice*profit;
-        Double maxPrice = minPrice + minPrice * getMaxGroceryTax();
+        Double minPrice = productionPrice + productionPrice * getMaxGroceryTax();
+        Double maxPrice = minPrice + productionPrice * profit;
         return maxPrice;
     }
     
     public static Double calculateProductPrice(Double productionPrice, State state){
         Double stateGroceryTax = state.getGroceryTax();
+
+        //can be passed as argument
         Double priceWithMaxTax = calculateGroceryPriceForStateWithMaxTax(productionPrice);
-        
-        Double priceProfitInState = priceWithMaxTax / (1 + stateGroceryTax);
-        Double netProfit = priceProfitInState - productionPrice;
-        
+        Double netProfit = priceWithMaxTax - productionPrice * (1 + stateGroceryTax);
+
         return netProfit;
     }
     
