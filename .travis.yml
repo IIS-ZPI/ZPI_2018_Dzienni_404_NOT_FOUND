@@ -14,7 +14,7 @@ before_deploy: "echo 'ready?'"
 deploy:
   provider: releases
   api_key: $SECURE_KEY
-  file: "target/release.jar"
+  file: target/release.jar
   skip_cleanup: true
   on:
     tags: true
