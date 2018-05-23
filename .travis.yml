@@ -8,6 +8,8 @@ install:
   - mvn install -DfinalName=release -DskipTests=true -Dmaven.javadoc.skip=true -B -V
     
 before_deploy: "echo 'ready?'"
+  - git config local user.name "Rafal"
+  - git config local user.mail "fujitsusiemens3@o2.pl"
 
 deploy:
   provider: releases
