@@ -46,7 +46,7 @@ public class Main {
                                 + ", type:" + productData[1] + ", production price:" + productData[2]);
                         calculateDisplayNetProfitForAllStatesForGroceries(productionPrice);
                     } else {
-                        System.out.println("No implementation for " + productData[1] + ".");
+                        System.out.println("No implementation for" + productData[1] + ".");
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -68,8 +68,11 @@ public class Main {
             State state = (State) entry.getValue();
             Double netProfit = States.calculateProductPrice(productionPrice, state);
             netProfitMap.put(state.getStateName(), netProfit);
-            System.out.print("\nNet profit in " + entry.getKey());
-            System.out.printf(" is: %.2f", netProfit);
+            System.out.print("\n" + entry.getKey());
+            if(entry.getKey().toString().length() < 8)
+                System.out.print("\t");
+            System.out.printf("\tTax: " + state.getGroceryTax());
+            System.out.printf("\t Net profit: %.2f", netProfit);
         }
         System.out.println("\n");
     }
