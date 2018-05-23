@@ -11,7 +11,6 @@ deploy:
   provider: releases
   user: "fujitsusiemens3@o2.pl"
   password: $PASS
-  api_key: $SECURE_KEY
   file: target/release.jar
   skip_cleanup: true
   on:
