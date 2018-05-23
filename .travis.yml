@@ -9,9 +9,8 @@ install:
     
 deploy:
   provider: releases
-  user: "fujitsusiemens3@o2.pl"
-  password: $PASS
-  file: target/release.jar
+  api_key: $SECURE_KEY
+  file: "target/release.jar"
   skip_cleanup: true
   on:
     tags: true
