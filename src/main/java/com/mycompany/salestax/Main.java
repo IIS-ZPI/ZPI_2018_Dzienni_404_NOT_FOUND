@@ -67,11 +67,11 @@ public class Main {
         for (Map.Entry entry : States.getStatesMap().entrySet()) {
             State state = (State) entry.getValue();
             Double netProfit = States.calculateProductPrice(productionPrice, state);
-            netProfitMap.put(state.getStateName(), netProfit);
+            netProfitMap.put(entry.getKey().toString(), netProfit);
             System.out.print("\n" + entry.getKey());
             if(entry.getKey().toString().length() < 8)
                 System.out.print("\t");
-            System.out.printf("\tTax: " + state.getGroceryTax());
+            System.out.printf("\t\tTax: " + state.getGroceryTax());
             System.out.printf("\t Net profit: %.2f", netProfit);
         }
         System.out.println("\n");
