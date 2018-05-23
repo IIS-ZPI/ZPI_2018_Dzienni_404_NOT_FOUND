@@ -3,25 +3,15 @@ install: true
 sudo: false
 script: mvn clean verify
 
-cache:
-  directories:
-  - $HOME/.m2
   
 install:
   - mvn install -DfinalName=release -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  
-branches:
-  only:
-    - master
-    - /v\d+\.\d+
     
 deploy:
   provider: releases
   api_key:
-    secure: 
-    77aecf3dd537e817818834364bcaf64f42360149
+    secure: 77aecf3dd537e817818834364bcaf64f42360149
   file: target/release.jar
   skip_cleanup: true
   on:
     tags: true
-    all_branches: true
