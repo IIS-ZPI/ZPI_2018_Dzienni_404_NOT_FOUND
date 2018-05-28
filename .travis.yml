@@ -2,14 +2,14 @@ language: java
 install: true
 script: mvn clean verify
 
-  
 install:
   - mvn install -DfinalName=release -DskipTests=false -Dmaven.javadoc.skip=true -B -V
     
 deploy:
   provider: releases
-  api_key: $SECURE_KEY
-  file: release.jar
+  api_key: 
+     secure: $SECURE_KEY
+  file: "release.jar"
   skip_cleanup: true
   on:
     tags: true
