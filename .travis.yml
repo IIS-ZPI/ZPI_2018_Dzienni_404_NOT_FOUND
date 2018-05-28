@@ -6,13 +6,13 @@ install:
 
 cache:
   directories:
-  - "$HOME/.m2"
+  - $HOME/.m2
 
 deploy:
   provider: releases
   api_key: 
      secure: $SECURE_KEY
-  file: target/release.jar
+  file: target/SalesTax-1.0-SNAPSHOT.jar
   skip_cleanup: true
   on:
     tags: true
