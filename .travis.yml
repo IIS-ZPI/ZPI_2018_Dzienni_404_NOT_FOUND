@@ -5,12 +5,10 @@ script: mvn clean verify
 
   
 install:
-  - mvn install -DfinalName=release -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn install -DfinalName=release -DskipTests=false -Dmaven.javadoc.skip=true -B -V
     
 deploy:
   provider: releases
-  user: "fujitsusiemens3@o2.pl"
-  password: $PASS
   api_key: $SECURE_KEY
   file: target/release.jar
   skip_cleanup: true
