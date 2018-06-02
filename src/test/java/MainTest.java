@@ -18,7 +18,16 @@ public class MainTest {
 		double profit = map.get("Iowa");
 
 		assertEquals(3.6, profit, 0.01);
+	}
 
+	@Test
+	public void testShouldCalculateNetProfitForArkansas8PercentTaxWhenGroceriesCost20Dollars() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_20_DOLLARS);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Arkansas");
+
+		assertEquals(2.0, profit, 0.01);
 	}
 
 }
