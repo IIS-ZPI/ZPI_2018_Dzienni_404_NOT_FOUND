@@ -30,4 +30,14 @@ public class MainTest {
 		assertEquals(2.0, profit, 0.01);
 	}
 
+	@Test
+	public void testShouldCalculateNetProfitForMissouri1dot225PercentTaxWhenGroceriesCost12Dollars12Cents() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(12.12);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Missouri");
+
+		assertEquals(2.03, profit, 0.01);
+	}
+
 }
