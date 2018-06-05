@@ -14,7 +14,12 @@ public class States {
 	static final double profit = 0.10;
 
 	static {
-		State state = new State();
+                State state = new State();
+		stateName = "Alaska";
+		state.setGroceryTax(0.0);
+		statesMap.put(stateName, state);
+            
+		state = new State();
 		stateName = "Arkansas";
 		state.setGroceryTax(0.08);
 		statesMap.put(stateName, state);
