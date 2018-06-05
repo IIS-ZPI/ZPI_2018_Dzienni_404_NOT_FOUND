@@ -12,7 +12,7 @@ deploy:
   provider: releases
   api_key: 
      secure: $SECURE_KEY
-  file: target/SalesTax-1.0-SNAPSHOT.jar
+  file: target/SalesTax-$TRAVIS_TAG-SNAPSHOT.jar
   skip_cleanup: true
   on:
     tags: true
