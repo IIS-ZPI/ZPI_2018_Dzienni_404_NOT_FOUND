@@ -11,13 +11,13 @@ public class MainTest {
 	private static final double DELTA = 0.01;
 	private static final double PRODUCT_23point53_DOLLARS = 23.53;
 
-	/* IOWA */
+	/* ALASKA */
 	@Test
-	public void testShouldCalculateNetProfitForIowa0PercentTax() {
+	public void testShouldCalculateNetProfitForAlaska0PercentTax() {
 		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
 
 		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Iowa");
+		double profit = map.get("Alaska");
 
 		assertEquals(4.24, profit, DELTA);
 	}
@@ -33,28 +33,6 @@ public class MainTest {
 		assertEquals(2.35, profit, DELTA);
 	}
 
-	/* MISSOURI */
-	@Test
-	public void testShouldCalculateNetProfitForMissouri1dot225PercentTax() {
-		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
-
-		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Missouri");
-
-		assertEquals(3.95, profit, DELTA);
-	}
-
-	/* LOUISIANA */
-	@Test
-	public void testShouldCalculateNetProfitForLouisiana7PercentTax() {
-		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
-
-		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Louisiana");
-
-		assertEquals(2.59, profit, DELTA);
-	}
-
 	/* GEORGIA */
 	@Test
 	public void testShouldCalculateNetProfitForGeorgia4PercentTax() {
@@ -66,24 +44,13 @@ public class MainTest {
 		assertEquals(3.29, profit, DELTA);
 	}
 
-	/* MARYLAND */
+	/* IOWA */
 	@Test
-	public void testShouldCalculateNetProfitForMaryland0PercentTax() {
+	public void testShouldCalculateNetProfitForIowa0PercentTax() {
 		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
 
 		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Maryland");
-
-		assertEquals(4.24, profit, DELTA);
-	}
-
-	/* MAINE */
-	@Test
-	public void testShouldCalculateNetProfitForMaine0PercentTax() {
-		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
-
-		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Maine");
+		double profit = map.get("Iowa");
 
 		assertEquals(4.24, profit, DELTA);
 	}
@@ -99,15 +66,48 @@ public class MainTest {
 		assertEquals(2.71, profit, DELTA);
 	}
 
-	/* MISSISIPI */
+	/* KENTUCKY */
 	@Test
-	public void testShouldCalculateNetProfitFoMissisippi7PercentTax() {
+	public void testShouldCalculateNetProfitForKentucky0PercentTax() {
 		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
 
 		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Mississippi");
+		double profit = map.get("Kentucky");
+
+		assertEquals(4.24, profit, DELTA);
+	}
+
+	/* LOUISIANA */
+	@Test
+	public void testShouldCalculateNetProfitForLouisiana7PercentTax() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Louisiana");
 
 		assertEquals(2.59, profit, DELTA);
+	}
+
+	/* MAINE */
+	@Test
+	public void testShouldCalculateNetProfitForMaine0PercentTax() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Maine");
+
+		assertEquals(4.24, profit, DELTA);
+	}
+
+	/* MARYLAND */
+	@Test
+	public void testShouldCalculateNetProfitForMaryland0PercentTax() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Maryland");
+
+		assertEquals(4.24, profit, DELTA);
 	}
 
 	/* MASSACHUSETS */
@@ -117,17 +117,6 @@ public class MainTest {
 
 		Map<String, Double> map = Main.getNetProfitMap();
 		double profit = map.get("Massachusetts");
-
-		assertEquals(4.24, profit, DELTA);
-	}
-
-	/* KENTUCKY */
-	@Test
-	public void testShouldCalculateNetProfitForKentucky0PercentTax() {
-		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
-
-		Map<String, Double> map = Main.getNetProfitMap();
-		double profit = map.get("Kentucky");
 
 		assertEquals(4.24, profit, DELTA);
 	}
@@ -154,4 +143,25 @@ public class MainTest {
 		assertEquals(4.24, profit, DELTA);
 	}
 
+	/* MISSISIPI */
+	@Test
+	public void testShouldCalculateNetProfitForMissisippi7PercentTax() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Mississippi");
+
+		assertEquals(2.59, profit, DELTA);
+	}
+
+	/* MISSOURI */
+	@Test
+	public void testShouldCalculateNetProfitForMissouri1dot225PercentTax() {
+		Main.calculateDisplayNetProfitForAllStatesForGroceries(PRODUCT_23point53_DOLLARS);
+
+		Map<String, Double> map = Main.getNetProfitMap();
+		double profit = map.get("Missouri");
+
+		assertEquals(3.95, profit, DELTA);
+	}
 }
