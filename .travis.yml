@@ -2,7 +2,7 @@ language: java
 install: true
 
 install:
-  - mvn install versions:set -DnewVersion=$TRAVIS_TAG -DfinalName=release -DskipTests=false -Dmaven.javadoc.skip=true -B -V
+  - mvn install -DfinalName=release -DskipTests=false -Dmaven.javadoc.skip=true -B -V
 
 cache:
   directories:
@@ -12,9 +12,10 @@ deploy:
   provider: releases
   api_key: 
      secure: $SECURE_KEY
-  file: target/SalesTax-$TRAVIS_TAG.jar
+  file: target/SalesTax-1.0-SNAPSHOT.jar
   skip_cleanup: true
   on:
     tags: true
 
-
+after_deploy:
+  -mv target/SalesTax-1.0-SNAPSHOT.jar target/SalesTax-$TRAVIS_TAG
